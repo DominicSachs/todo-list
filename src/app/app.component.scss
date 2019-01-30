@@ -1,13 +1,3 @@
-.mat-sidenav-container {   
-    height: calc(100vh - 64px);
-
-    .mat-sidenav {
-        width: 200px;
-
-        .mat-nav-list {
-            .mat-icon {
-                padding: 10px;
-            }
-        }
-    }
+.mat-sidenav-container {
+  height: calc(100vh - 64px);
 }
