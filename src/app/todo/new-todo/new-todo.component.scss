@@ -1,7 +1,18 @@
 .new-todo {
-  display: inline;
+  width: 200px;
+
   input {
-    display: inline;
-    border: none;
+    border: 1px solid #673ab7;
+    padding: 10px 5px;
+  }
+
+  label {
+    padding: 10px 5px;
+    border: 1px solid transparent;
+    border: 1px solid #673ab7;
+
+    &:hover {
+      border: 1px solid #673ab7;
+    }
   }
 }

@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-todo.component.scss']
 })
 export class NewTodoComponent implements OnInit {
-  newClicked = false;
+  isEditMode = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onClick() {
-    this.newClicked = !this.newClicked;
+  onLabelClick() {
+    this.isEditMode = !this.isEditMode;
   }
 }

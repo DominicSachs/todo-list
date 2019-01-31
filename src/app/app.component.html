@@ -5,26 +5,28 @@
   <span>Todo</span>
 </mat-toolbar>
 <mat-sidenav-container autosize>
-    <mat-sidenav #sidenav mode="side" opened="true">
-      <mat-nav-list>
-          <mat-list-item>
-            <mat-icon mat-list-icon>star_rate</mat-icon>
-            <p matLine *ngIf="isExpanded">Wichtig</p>
-          </mat-list-item>
-      </mat-nav-list>
-      <!-- <mat-nav-list>
-          <mat-icon>add</mat-icon>
-          <app-new-todo></app-new-todo>
-        </mat-nav-list> -->
-    </mat-sidenav>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon>star_rate</mat-icon>
+        <p matLine *ngIf="isExpanded">Wichtig</p>
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon>add</mat-icon>
+        <app-new-todo matLine *ngIf="isExpanded"></app-new-todo>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
 
-    
+
   <div class="example-sidenav-content">
-      Main content that resizes properly
-    </div>
-  
-    <!-- <mat-sidenav-content>
+    Main content that resizes properly
+  </div>
+
+  <!-- <mat-sidenav-content>
       <h1>Contetnt</h1>
         <router-outlet></router-outlet>
     </mat-sidenav-content> -->
-  </mat-sidenav-container>
+</mat-sidenav-container>
