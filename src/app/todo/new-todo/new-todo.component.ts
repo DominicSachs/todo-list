@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-new-todo',
+  selector: 'new-todo',
   templateUrl: './new-todo.component.html',
   styleUrls: ['./new-todo.component.scss']
 })
 export class NewTodoComponent implements OnInit {
-  isEditMode = false;
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
+  isEditMode = false;
+1;
 
   ngOnInit() {
   }
@@ -16,4 +17,10 @@ export class NewTodoComponent implements OnInit {
   onLabelClick() {
     this.isEditMode = !this.isEditMode;
   }
+  // @HostListener('document:click', ['$event'])
+  // clickout(event) {
+  //   if (!this.elementRef.nativeElement.contains(event.target)) {
+  //     this.isEditMode = false;
+  //   }
+  // }
 }

@@ -1,0 +1,8 @@
+<mat-list-item class="list-item">
+  <mat-checkbox color="primary" [ngClass]="{completed: todoItem.completed}" [checked]="todoItem.completed" (change)="completeClick($event)">
+    {{ todoItem.title }}
+  </mat-checkbox>
+  <button mat-icon-button class="important" (click)="importantClick()">
+    <mat-icon>{{todoItem.isImportant ? 'star' : 'star_border'}}</mat-icon>
+  </button>
+</mat-list-item>

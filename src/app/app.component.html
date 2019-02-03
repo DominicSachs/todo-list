@@ -15,14 +15,14 @@
     <mat-nav-list>
       <mat-list-item>
         <mat-icon mat-list-icon>add</mat-icon>
-        <app-new-todo matLine *ngIf="isExpanded"></app-new-todo>
+        <new-todo matLine *ngIf="isExpanded"></new-todo>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
 
-  <div class="example-sidenav-content">
-    Main content that resizes properly
+  <div class="main-content">
+    <todo-list [todo]="todos[0]"></todo-list>
   </div>
 
   <!-- <mat-sidenav-content>

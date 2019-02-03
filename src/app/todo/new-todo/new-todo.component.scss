@@ -1,18 +1,38 @@
 .new-todo {
   width: 200px;
 
+  ::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    font-size: 16px;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-size: 16px;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-size: 16px;
+  }
+
+  ::placeholder {
+    /* Most modern browsers support this now. */
+    font-size: 16px;
+  }
+
   input {
-    border: 1px solid #673ab7;
+    border: none;
     padding: 10px 5px;
+    outline: none;
+
+    &:focus {
+      background: transparent;
+    }
   }
 
   label {
     padding: 10px 5px;
     border: 1px solid transparent;
-    border: 1px solid #673ab7;
-
-    &:hover {
-      border: 1px solid #673ab7;
-    }
   }
 }
