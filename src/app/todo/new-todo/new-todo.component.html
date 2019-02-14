@@ -1,4 +1,4 @@
 <div class="new-todo">
-  <label *ngIf="!isEditMode" (click)="onLabelClick()">Neue Aufgabe</label>
+  <p *ngIf="!isEditMode" (click)="onLabelClick()">Neue Aufgabe</p>
   <input *ngIf="isEditMode" placeholder="Neue Aufgabe" autofocus />
 </div>

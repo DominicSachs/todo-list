@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/modules/material.module';
 import { TodoModule } from './todo/todo.module';
+import { TodoService } from './todo/services/todo.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { TodoModule } from './todo/todo.module';
     MaterialModule,
     TodoModule
   ],
-  providers: [],
+  providers: [
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

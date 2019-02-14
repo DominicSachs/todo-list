@@ -17,10 +17,13 @@ export class NewTodoComponent implements OnInit {
   onLabelClick() {
     this.isEditMode = !this.isEditMode;
   }
-  // @HostListener('document:click', ['$event'])
-  // clickout(event) {
+
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    console.log(event);
+    console.log(this.elementRef);
   //   if (!this.elementRef.nativeElement.contains(event.target)) {
   //     this.isEditMode = false;
   //   }
-  // }
+  }
 }

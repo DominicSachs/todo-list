@@ -13,6 +13,10 @@
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
+      <a *ngFor="let t of todos" mat-list-item routerLinkActive routerLink="/lists/{{t.id}}">
+        <mat-icon mat-list-icon>list</mat-icon>
+        <p matLine *ngIf="isExpanded">{{ t.title }}</p>
+     </a>
       <mat-list-item>
         <mat-icon mat-list-icon>add</mat-icon>
         <new-todo matLine *ngIf="isExpanded"></new-todo>
@@ -22,7 +26,8 @@
 
 
   <div class="main-content">
-    <todo-list [todo]="todos[0]"></todo-list>
+    <!-- <todo-list [todo]="todos[0]"></todo-list> -->
+    <router-outlet></router-outlet>
   </div>
 
   <!-- <mat-sidenav-content>
