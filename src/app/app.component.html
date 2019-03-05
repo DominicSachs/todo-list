@@ -7,10 +7,10 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav mode="side" opened="true">
     <mat-nav-list>
-      <mat-list-item>
+      <a mat-list-item routerLink="/lists/important">
         <mat-icon mat-list-icon>star_rate</mat-icon>
         <p matLine *ngIf="isExpanded">Wichtig</p>
-      </mat-list-item>
+      </a>
     </mat-nav-list>
     <mat-nav-list>
       <a *ngFor="let t of todos" mat-list-item routerLinkActive routerLink="/lists/{{t.id}}">
@@ -19,19 +19,11 @@
      </a>
       <mat-list-item>
         <mat-icon mat-list-icon>add</mat-icon>
-        <new-todo matLine *ngIf="isExpanded"></new-todo>
+        <!-- <new-todo matLine *ngIf="isExpanded"></new-todo> -->
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
-
-
   <div class="main-content">
-    <!-- <todo-list [todo]="todos[0]"></todo-list> -->
     <router-outlet></router-outlet>
   </div>
-
-  <!-- <mat-sidenav-content>
-      <h1>Contetnt</h1>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content> -->
 </mat-sidenav-container>

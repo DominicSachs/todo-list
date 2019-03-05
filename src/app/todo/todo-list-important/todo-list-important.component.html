@@ -1,0 +1,8 @@
+<h1>{{ todo?.title }}</h1>
+
+<mat-list #todoist class="todolist">
+  <todo-item *ngFor="let item of todo?.items; let i = index"
+              [todoItem]="item"
+              (completedChange)="completedChange($event)"
+              (importantChange)="importantChange($event, i)"></todo-item>
+</mat-list>

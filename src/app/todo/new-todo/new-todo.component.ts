@@ -9,7 +9,6 @@ export class NewTodoComponent implements OnInit {
 
   constructor(private elementRef: ElementRef) { }
   isEditMode = false;
-1;
 
   ngOnInit() {
   }
@@ -18,12 +17,12 @@ export class NewTodoComponent implements OnInit {
     this.isEditMode = !this.isEditMode;
   }
 
-  @HostListener('document:click', ['$event'])
-  clickout(event) {
-    console.log(event);
-    console.log(this.elementRef);
+  // @HostListener('document:click', ['$event'])
+  // clickout(event) {
+  //   console.log(event);
+  //  console.log(this.elementRef);
   //   if (!this.elementRef.nativeElement.contains(event.target)) {
   //     this.isEditMode = false;
   //   }
-  }
+  // }
 }

@@ -30,6 +30,15 @@ export class TodoService {
         return of(this.todos);
     }
 
+    getImportantTodo(): Observable<Todo> {
+      const todo = <Todo>{ title: 'Wichtig', id: 0 };
+      todo.items = [].concat.apply([], this.todos.map(t => {
+        return t.items.filter(i => i.isImportant);
+      }));
+
+      return of(todo);
+  }
+
     getTodo(id): Observable<Todo> {
         // load from http
         const todo = this.todos.find(t => t.id === id);

@@ -14,6 +14,9 @@ export class TodoItemComponent implements OnInit {
   @Output()
   completedChange = new EventEmitter<TodoItem>();
 
+  @Output()
+  importantChange = new EventEmitter<TodoItem>();
+
   constructor() { }
 
   ngOnInit() { }
@@ -25,5 +28,6 @@ export class TodoItemComponent implements OnInit {
 
   importantClick() {
     this.todoItem.isImportant = !this.todoItem.isImportant;
+    this.importantChange.emit(this.todoItem);
   }
 }

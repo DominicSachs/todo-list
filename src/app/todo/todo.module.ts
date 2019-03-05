@@ -6,9 +6,14 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoMenuComponent } from './todo-menu/todo-menu.component';
 import { TodoService } from './services/todo.service';
+import { TodoListImportantComponent } from './todo-list-important/todo-list-important.component';
 
 @NgModule({
-  declarations: [NewTodoComponent, TodoItemComponent, TodoListComponent, TodoMenuComponent],
+  declarations: [
+    TodoListComponent,
+    TodoListImportantComponent,
+    TodoItemComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule
@@ -17,8 +22,9 @@ import { TodoService } from './services/todo.service';
     TodoService
   ],
   exports: [
-    NewTodoComponent,
+    // NewTodoComponent,
     TodoListComponent,
+    TodoListImportantComponent,
     TodoItemComponent
   ]
 })
