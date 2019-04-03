@@ -1,0 +1,22 @@
+<div class="title" *ngIf="!isEditMode" >
+  <h2 (click)="editTitle()">{{ title }}</h2>
+  <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_horiz</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="editTitle()">
+      <mat-icon>edit</mat-icon>
+      <span>Liste umbenennen</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item class="delete-item">
+        <mat-icon>delete</mat-icon>
+        <span>Liste löschen</span>
+    </button>
+  </mat-menu>
+</div>
+<div *ngIf="isEditMode">
+  <form>
+    <mat-form-field>
+      <input (clickOutside)="close($event)" matInput type="text" name="title" [(ngModel)]="title" />
+    </mat-form-field>
+  </form>
+</div>

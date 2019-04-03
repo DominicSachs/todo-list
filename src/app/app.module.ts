@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/modules/material.module';
 import { TodoModule } from './todo/todo.module';
 import { TodoService } from './todo/services/todo.service';
+import { ClickOutsideDirective } from './shared/directives/click-outside.directive';
 
 @NgModule({
   declarations: [

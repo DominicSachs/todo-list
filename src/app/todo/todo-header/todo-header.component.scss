@@ -1,0 +1,19 @@
+.title {
+    display: flex;
+
+    h2 {
+        font-size: 1.45em;
+    }
+
+    .mat-icon-button {
+        line-height: 65px;
+    }
+}
+
+.delete-item {
+    color: red;
+    
+    .mat-icon {
+        color: red;
+    }
+}

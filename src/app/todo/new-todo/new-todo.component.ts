@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'new-todo',
@@ -17,12 +17,8 @@ export class NewTodoComponent implements OnInit {
     this.isEditMode = !this.isEditMode;
   }
 
-  // @HostListener('document:click', ['$event'])
-  // clickout(event) {
-  //   console.log(event);
-  //  console.log(this.elementRef);
-  //   if (!this.elementRef.nativeElement.contains(event.target)) {
-  //     this.isEditMode = false;
-  //   }
-  // }
+  close() {
+    this.isEditMode = false;
+    console.log('close');
+  }
 }

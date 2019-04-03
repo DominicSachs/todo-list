@@ -1,4 +1,4 @@
-<h1>{{ todo?.title }}</h1>
+<todo-header [title]="todo?.title" (nameChanged)="titleChanged($event)"></todo-header>
 
 <mat-list #todoist class="todolist">
   <todo-item *ngFor="let item of todo?.items" [todoItem]="item" (completedChange)="completedChange($event)"></todo-item>

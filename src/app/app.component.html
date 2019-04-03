@@ -18,8 +18,8 @@
         <p matLine *ngIf="isExpanded">{{ t.title }}</p>
      </a>
       <mat-list-item>
-        <mat-icon mat-list-icon>add</mat-icon>
-        <!-- <new-todo matLine *ngIf="isExpanded"></new-todo> -->
+        <mat-icon (click)="isExpanded = true" mat-list-icon>add</mat-icon>
+        <new-todo matLine *ngIf="isExpanded"></new-todo>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>

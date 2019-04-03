@@ -25,4 +25,8 @@ export class TodoListComponent implements OnInit {
   completedChange() {
     this.todo.items = this.todo.items.sort((a, b) => a.completed ? 1 : -1);
   }
+
+  titleChanged(title: string) {
+    this.todo.title = title;
+  }
 }
