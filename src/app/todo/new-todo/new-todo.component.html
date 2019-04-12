@@ -1,4 +1,4 @@
 <div class="new-todo">
   <p *ngIf="!isEditMode" (click)="onLabelClick()">Neue Aufgabe</p>
-  <input *ngIf="isEditMode" (clickOutside)="close($event)" placeholder="Neue Aufgabe" autofocus />
+  <input *ngIf="isEditMode" [(ngModel)]="title" (clickOutside)="addTodo($event)" placeholder="Neue Aufgabe" autofocus (keyup.enter)="addTodo($event)" />
 </div>

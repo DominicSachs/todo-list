@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { TodoHeaderComponent } from './todo-header.component';
+
 
 describe('TodoHeaderComponent', () => {
   let component: TodoHeaderComponent;
@@ -8,6 +10,7 @@ describe('TodoHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule, MaterialModule],
       declarations: [ TodoHeaderComponent ]
     })
     .compileComponents();

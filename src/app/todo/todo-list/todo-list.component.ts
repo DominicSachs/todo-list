@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Todo } from '../models/todo';
-import { ActivatedRoute } from '@angular/router';
 import { TodoService } from '../services/todo.service';
-import { TodoItem } from '../models/todo-item';
 
 @Component({
   selector: 'todo-list',
@@ -13,7 +12,7 @@ export class TodoListComponent implements OnInit {
   @Input()
   todo: Todo;
 
-  constructor(private route: ActivatedRoute, private todoService: TodoService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private todoService: TodoService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -28,5 +27,10 @@ export class TodoListComponent implements OnInit {
 
   titleChanged(title: string) {
     this.todo.title = title;
+  }
+
+  deleteList() {
+    this.todoService.deleteTodo(this.todo.id)
+      .subscribe(_ => this.router.navigate(['lists', 'important']));
   }
 }

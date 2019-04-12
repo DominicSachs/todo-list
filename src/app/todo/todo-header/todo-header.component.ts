@@ -14,6 +14,9 @@ export class TodoHeaderComponent implements OnInit {
   @Output()
   nameChanged = new EventEmitter<string>();
 
+  @Output()
+  deleteList = new EventEmitter();
+
   isEditMode: boolean;
 
   constructor() { }
@@ -25,6 +28,10 @@ export class TodoHeaderComponent implements OnInit {
     of({}).pipe(
       delay(50),
     ).subscribe(_ => this.isEditMode = !this.isEditMode );
+  }
+
+  delete() {
+    this.deleteList.emit();
   }
 
   close() {

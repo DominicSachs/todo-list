@@ -1,4 +1,7 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'new-todo',
@@ -6,19 +9,24 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./new-todo.component.scss']
 })
 export class NewTodoComponent implements OnInit {
-
-  constructor(private elementRef: ElementRef) { }
   isEditMode = false;
+  title: string;
 
-  ngOnInit() {
-  }
+  constructor(private todoService: TodoService) { }
+
+  ngOnInit() { }
 
   onLabelClick() {
-    this.isEditMode = !this.isEditMode;
+    of({}).pipe(
+      delay(50),
+    ).subscribe(_ => this.isEditMode = !this.isEditMode );
   }
 
-  close() {
+  addTodo() {
+    if (this.title) {
+      this.todoService.addTodo(this.title);
+    }
+    this.title = '';
     this.isEditMode = false;
-    console.log('close');
   }
 }
