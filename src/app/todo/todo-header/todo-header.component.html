@@ -16,7 +16,7 @@
 <div *ngIf="isEditMode">
   <form>
     <mat-form-field>
-      <input (clickOutside)="close($event)" matInput type="text" name="title" [(ngModel)]="title" />
+      <input (blur)="close($event)" (keydown.enter)="close($event)" matInput type="text" name="title" [(ngModel)]="title" />
     </mat-form-field>
   </form>
 </div>

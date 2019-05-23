@@ -1,0 +1,6 @@
+<mat-list-item class="list-item">
+  <button mat-icon-button>
+    <mat-icon>add</mat-icon>
+  </button>
+  <input [(ngModel)]="title" placeholder="Aufgabe hinzufügen" (keydown.enter)="add()" (blur)="add()" />
+</mat-list-item>

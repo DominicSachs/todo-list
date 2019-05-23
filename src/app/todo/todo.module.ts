@@ -7,17 +7,17 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoService } from './services/todo.service';
 import { TodoListImportantComponent } from './todo-list-important/todo-list-important.component';
 import { TodoHeaderComponent } from './todo-header/todo-header.component';
-import { ClickOutsideDirective } from '../shared/directives/click-outside.directive';
 import { FormsModule } from '@angular/forms';
+import { TodoItemNewComponent } from './todo-item-new/todo-item-new.component';
 
 @NgModule({
   declarations: [
-    ClickOutsideDirective,
     NewTodoComponent,
     TodoListComponent,
     TodoListImportantComponent,
     TodoItemComponent,
-    TodoHeaderComponent
+    TodoHeaderComponent,
+    TodoItemNewComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     NewTodoComponent,
     TodoListComponent,
     TodoListImportantComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    TodoItemNewComponent
   ]
 })
 export class TodoModule { }

@@ -5,7 +5,7 @@ import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { TodoService } from '../services/todo.service';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { TodoListImportantComponent } from './todo-list-important.component';
-
+import { TodoItem } from '../models/todo-item';
 
 describe('TodoListComponent', () => {
   let component: TodoListImportantComponent;
@@ -29,7 +29,16 @@ describe('TodoListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('sorts the todo items on compledChange', () => {
+    component.todo = <any>{
+      items: [
+        new TodoItem('1', false, true),
+        new TodoItem('2', false, false)
+      ]
+    };
+
+    component.completedChange();
+
+    expect(component.todo.items[0].title).toBe('2');
   });
 });

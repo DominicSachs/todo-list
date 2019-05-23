@@ -7,10 +7,12 @@ import { TodoService } from '../services/todo.service';
 import { TodoHeaderComponent } from '../todo-header/todo-header.component';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list.component';
-
+import { TodoItemNewComponent } from '../todo-item-new/todo-item-new.component';
+import { TodoItem } from '../models/todo-item';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
+  let todoService: TodoService;
   let fixture: ComponentFixture<TodoListComponent>;
   const mockRouter = {
     navigate: jasmine.createSpy('navigate')
@@ -19,7 +21,7 @@ describe('TodoListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, FormsModule],
-      declarations: [TodoListComponent, TodoItemComponent, TodoHeaderComponent],
+      declarations: [TodoListComponent, TodoItemComponent, TodoHeaderComponent, TodoItemNewComponent],
       providers: [
         { provide: ActivatedRoute, useValue: { params: of({ id: 'test' }) } },
         { provide: Router, useValue: mockRouter },
@@ -32,10 +34,36 @@ describe('TodoListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoListComponent);
     component = fixture.componentInstance;
+    todoService = TestBed.get(TodoService);
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('changes the todo title', () => {
+    component.todo = <any>{};
+
+    component.titleChanged('test');
+
+    expect(component.todo.title).toBe('test');
+  });
+
+  it('sorts the todo items on compledChange', () => {
+    component.todo = <any>{
+      items: [
+        new TodoItem('1', false, true),
+        new TodoItem('2', false, false)
+      ]
+    };
+
+    component.completedChange();
+
+    expect(component.todo.items[0].title).toBe('2');
+  });
+
+  it('deleteList calls delete on todo service', () => {
+    spyOn(todoService, 'deleteTodo').and.returnValue(of({}));
+    component.todo = <any>{ id: 1 };
+    component.deleteList();
+
+    expect(todoService.deleteTodo).toHaveBeenCalledWith(1);
   });
 });

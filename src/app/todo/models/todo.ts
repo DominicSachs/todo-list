@@ -1,6 +1,10 @@
 import { TodoItem } from './todo-item';
 
-export interface Todo {
+export class Todo {
+    constructor() {
+        this.items = [];
+    }
+
     id: number;
     title: string;
     items: TodoItem[];
