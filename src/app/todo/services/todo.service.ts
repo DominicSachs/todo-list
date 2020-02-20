@@ -1,6 +1,8 @@
 import { Observable, of } from 'rxjs';
 import { Todo } from '../models/todo';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class TodoService {
   private todos: Todo[] = [{
     id: 1,
