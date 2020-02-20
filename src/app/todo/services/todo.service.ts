@@ -6,26 +6,25 @@ export class TodoService {
     id: 1,
     title: 'Einkaufsliste',
     items: [
-      { title: 'Möhren' },
-      { title: 'Gurke' },
-      { title: 'Wein' },
-      { title: 'Bier' },
-      { title: 'Äpfel' }
+      { title: 'Möhren', index: 0, completed: false },
+      { title: 'Gurke', index: 1, completed: false },
+      { title: 'Wein', index: 2, completed: false },
+      { title: 'Bier', index: 3, completed: false },
+      { title: 'Äpfel', index: 4, completed: false }
     ]
   },
   {
     id: 2,
     title: 'Einladungsliste',
     items: [
-      { title: 'Robert de Niro' },
-      { title: 'Al Pacino' },
-      { title: 'Joe Pesci' },
-      { title: 'Frank Vincent' },
-      { title: 'Andy García' },
-      { title: 'Chazz Palminteri' }
+      { title: 'Robert de Niro', index: 0, completed: false },
+      { title: 'Al Pacino', index: 1, completed: false },
+      { title: 'Joe Pesci', index: 2, completed: false },
+      { title: 'Frank Vincent', index: 3, completed: false },
+      { title: 'Andy García', index: 4, completed: false },
+      { title: 'Chazz Palminteri', index: 5, completed: false }
     ]
-  }
-  ];
+  }];
 
   getTodos(): Observable<Todo[]> {
     // load from http

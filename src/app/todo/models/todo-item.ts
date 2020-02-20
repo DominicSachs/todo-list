@@ -3,4 +3,6 @@ export class TodoItem {
         this.isImportant = false;
         this.completed = false;
     }
+
+    index: number;
 }
