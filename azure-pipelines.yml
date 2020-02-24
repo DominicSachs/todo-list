@@ -30,3 +30,4 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'ng build --prod'
+  displayName: 'ng build prod'
