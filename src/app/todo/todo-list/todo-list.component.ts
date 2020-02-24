@@ -22,7 +22,13 @@ export class TodoListComponent implements OnInit {
   }
 
   completedChange() {
-    this.todo.items = this.todo.items.sort((a, b) => a.completed ? 1 : -1);
+    this.todo.items = this.todo.items.sort((a, b) => {
+      if (a.completed === b.completed) {
+        return a.index - b.index;
+      }
+
+      return !a.completed ? -1 : 1;
+    });
   }
 
   titleChanged(title: string) {

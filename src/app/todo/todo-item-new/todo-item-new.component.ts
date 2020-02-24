@@ -14,7 +14,8 @@ export class TodoItemNewComponent {
 
   add() {
     if (this.title) {
-      this.todo.items.push(<TodoItem>{ title: this.title });
+      const maxIndex = Math.max(...this.todo.items.map(t => t.index), 0);
+      this.todo.items.push(<TodoItem>{ title: this.title, index: maxIndex + 1, completed: false });
       this.title = '';
     }
   }

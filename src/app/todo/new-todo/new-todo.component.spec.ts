@@ -43,6 +43,6 @@ describe('NewTodoComponent', () => {
 
     component.addTodo();
 
-    expect(todoService.addTodo).not.toHaveBeenCalled();
+    expect(todoService.addTodo).toHaveBeenCalled();
   });
 });

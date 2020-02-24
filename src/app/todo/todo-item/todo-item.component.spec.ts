@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatCheckboxChange } from '@angular/material';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { TodoItem } from '../models/todo-item';

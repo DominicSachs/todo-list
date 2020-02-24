@@ -34,7 +34,7 @@ describe('TodoListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoListComponent);
     component = fixture.componentInstance;
-    todoService = TestBed.get(TodoService);
+    todoService = TestBed.inject(TodoService);
     fixture.detectChanges();
   });
 
@@ -49,14 +49,17 @@ describe('TodoListComponent', () => {
   it('sorts the todo items on compledChange', () => {
     component.todo = <any>{
       items: [
-        new TodoItem('1', false, true),
-        new TodoItem('2', false, false)
+        <TodoItem>{ id: '1', title: '1', completed: true, index: 1 },
+        <TodoItem>{ id: '2', title: '2', completed: false, index: 2 },
+        <TodoItem>{ id: '3', title: '3', completed: true, index: 3 }
       ]
     };
 
     component.completedChange();
 
-    expect(component.todo.items[0].title).toBe('2');
+    expect(component.todo.items[0].index).toBe(2);
+    expect(component.todo.items[1].index).toBe(1);
+    expect(component.todo.items[2].index).toBe(3);
   });
 
   it('deleteList calls delete on todo service', () => {
