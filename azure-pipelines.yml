@@ -12,17 +12,20 @@ steps:
 
 - script: |
     npm install -g @angular/cli
-  displayName: 'npm install and build'
+  displayName: 'npm i angular/cli'
 - task: Npm@1
   inputs:
     command: 'install'
+  displayName: 'npm i'
 
 - task: CmdLine@2
   inputs:
     script: 'ng lint'
+  displayName: 'ng lint'
 - task: CmdLine@2
   inputs:
-    script: 'ng test'
+    script: 'ng test --watch false'
+  displayName: 'ng test'
     
 - task: CmdLine@2
   inputs:
