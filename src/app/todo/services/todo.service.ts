@@ -1,6 +1,6 @@
 import { Observable, of } from 'rxjs';
 import { Todo } from '../models/todo';
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class TodoService {

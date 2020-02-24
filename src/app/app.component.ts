@@ -9,6 +9,7 @@ import { TodoService } from './todo/services/todo.service';
 })
 export class AppComponent implements OnInit {
   todos: Todo[];
+  isExpanded: boolean;
 
   constructor(private todoService: TodoService) { }
 
