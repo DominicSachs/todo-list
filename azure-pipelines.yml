@@ -13,7 +13,15 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    ng lint
-    ng test
-    ng build --prod
   displayName: 'npm install and build'
+
+- task: CmdLine@2
+  inputs:
+    script: 'ng lint'
+- task: CmdLine@2
+  inputs:
+    script: 'ng test'
+    
+- task: CmdLine@2
+  inputs:
+    script: 'ng build --prod'
