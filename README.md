@@ -1,4 +1,4 @@
-[![Build Status](https://dominicsachs.visualstudio.com/Todo/_apis/build/status/DominicSachs.todo-list?branchName=develop)](https://dominicsachs.visualstudio.com/Todo/_build/latest?definitionId=4&branchName=develop)
+![Build Status](https://dominicsachs.visualstudio.com/Todo/_apis/build/status/DominicSachs.todo-list?branchName=develop)
 
 # TodoList
 
